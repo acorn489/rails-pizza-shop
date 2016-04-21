@@ -5,4 +5,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
+    = render "shared/navbar"
+    div.row.slogan-header
+      div.span-8
+        div.header
+          = image_tag("pizza-header")
+          div.container
+            span.slogan We <b>bake</b> pizza. Yeah!
+    .container.flash-container
+      = flash_messages
+    .container
+      = yield

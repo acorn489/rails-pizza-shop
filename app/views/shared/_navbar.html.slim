@@ -1,15 +1,25 @@
 nav.navbar.navbar-default
   div.container
-    a.navbar-brand href="#"
+    a.navbar-brand href="/"
       b HotPizza!
     ul.nav.navbar-nav
-      li.nav-item
-        a.nav-link href="#" Favorite Pizza
-      li.nav-item
-        a.nav-link href="#" Daily Deals
-    form.form-inline.pull-xs-right
-      div.form-group
-        input.form-control#input-username type="text" placeholder="yummyusername"
-      div.form-group
-        input.form-control#input-password type="text" placeholder="mmmpassword"
-      button.btn.btn-primary-outline type="submit" Login
+      - unless user_signed_in?
+        = link_to "Sign up", new_user_registration_path, {class: 'btn btn-danger-outline pull-xs-right signup-button'}
+        = form_tag session_path(:user), {class: 'form-inline pull-xs-right'} do
+          div.form-group
+            = text_field_tag 'user[email]', nil, {class: "form-control", id: "input-username", placeholder: "yummyusername"}
+          div.form-group
+            = password_field_tag 'user[password]', nil, {class: "form-control", id: "input-password", placeholder: "mmmpassword"}
+          button.btn.btn-primary type="submit" Sign in
+      - else
+        .pull-xs-right
+          li.nav-item
+            = link_to image_tag('cart-icon.png', {class: 'cart-icon'}), '/cart'
+          li.nav-item.dropdown
+            a.dropdown-toggle.nav-link data-toggle="dropdown" role="button" = "#{current_user.name}"
+            .dropdown-menu
+              = link_to "Profile", edit_user_registration_path, {class: 'dropdown-item'}
+              = link_to "My previous orders", nil, {class: 'dropdown-item'}
+              .dropdown-divider
+              = link_to "Logout", destroy_user_session_path, {method: :delete, class: 'dropdown-item'}
+              /= link_to "", destroy_user_session_path, {method: :delete, class: 'nav-link'}

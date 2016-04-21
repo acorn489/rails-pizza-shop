@@ -1,5 +1,7 @@
 @import "bootstrap";
+@import "devise_bootstrap_views";
 @import "*";
+
 
 .padding-0 { padding: 0; }
 .navbar {
@@ -12,6 +14,14 @@
   form {
     margin: 0;
   }
+  .cart-icon {
+  }
+  .signup-button {
+    margin-left: 4px;
+  }
+}
+.flash-container {
+  margin-top: 24px;
 }
 .main.container {
   margin-top: 24px;

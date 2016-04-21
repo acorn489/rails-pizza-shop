@@ -1,12 +1,4 @@
-= render "shared/navbar"
-
-div.row.slogan-header
-  div.span-8
-    div.header
-      = image_tag("pizza-header")
-      div.container
-        span.slogan We <b>bake</b> pizza. Yeah!
-div.container.main.welcome
+div.main.welcome
   h1 Hot pizza
   div.row
     - unless @pizzas.empty?

@@ -6,6 +6,20 @@ div.row.slogan-header
       = image_tag("pizza-header")
       div.container
         span.slogan We <b>bake</b> pizza. Yeah!
-div.container.main
+div.container.main.welcome
   h1 Hot pizza
-  p Coming soon...
+  div.row
+    - unless @pizzas.empty?
+      - @pizzas.each do |pizza|
+        div.col-md-4
+          .card
+            .card-img-top style='background-image: url(#{asset_path(pizza.image)})'
+            .card-block
+              h4.card-title = pizza.name
+              h6.card-subtitle.text-muted = pizza.ingredients
+              .text-xs-right
+                button.btn.btn-warning-outline = number_to_currency(pizza.price, :unit => '€')
+    - else
+      p
+        | We don't have any pizzas right now :( Try again later!
+

@@ -1,3 +1,21 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.welcome {
+  .col-md-4 {
+    margin-top: 24px;
+    .card-img-top  {
+      height: 300px;
+      background-size: cover;
+    }
+    .name {
+      font-size: 120%;
+    }
+    .ingredients {
+      font-style: italic;
+    }
+    button {
+      margin-top: 18px;
+    }
+  }
+}

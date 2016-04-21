@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "*";
 
 .padding-0 { padding: 0; }
 .navbar {
@@ -7,6 +8,9 @@
   }
   a.navbar-brand {
     color: #ffb612;
+  }
+  form {
+    margin: 0;
   }
 }
 .main.container {
@@ -42,4 +46,3 @@
     }
   }
 }
-body { padding-top: 50px; }

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'welcome#index'
   get 'welcome/index'
+  get 'cart' => 'cart#index'
+  post 'add_to_cart' => 'cart#add'
+  post 'checkout' => 'cart#checkout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

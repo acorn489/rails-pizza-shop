@@ -13,13 +13,13 @@ nav.navbar.navbar-default
           button.btn.btn-primary type="submit" Sign in
       - else
         .pull-xs-right
-          li.nav-item
+          li.nav-item.cart-navbar-item
+            span.cart-item-counter = Cart.item_count(current_user.id)
             = link_to image_tag('cart-icon.png', {class: 'cart-icon'}), '/cart'
           li.nav-item.dropdown
             a.dropdown-toggle.nav-link data-toggle="dropdown" role="button" = "#{current_user.name}"
             .dropdown-menu
               = link_to "Profile", edit_user_registration_path, {class: 'dropdown-item'}
-              = link_to "My previous orders", nil, {class: 'dropdown-item'}
+              = link_to "My previous orders (coming soon!)", nil, {class: 'dropdown-item'}
               .dropdown-divider
               = link_to "Logout", destroy_user_session_path, {method: :delete, class: 'dropdown-item'}
-              /= link_to "", destroy_user_session_path, {method: :delete, class: 'nav-link'}

@@ -10,7 +10,9 @@ div.main.welcome
               h4.card-title = pizza.name
               h6.card-subtitle.text-muted = pizza.ingredients
               .text-xs-right
-                button.btn.btn-warning-outline = number_to_currency(pizza.price, :unit => '€')
+                = link_to number_to_currency(pizza.price, :unit => '€'),
+                        {id: pizza.id, controller: :cart, action: :add},
+                        {class: 'btn btn-warning-outline', method: :post}
     - else
       p
         | We don't have any pizzas right now :( Try again later!

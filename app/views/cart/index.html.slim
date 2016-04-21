@@ -1,0 +1,20 @@
+div.main.welcome
+  h1 Cart
+  div.row
+    - unless @cart_items.empty?
+      table.table
+        thead
+          tr
+            th = "Name"
+            th = "Ingredients"
+            th = "Price"
+        - @cart_items.each do |cart_item|
+            tr
+              td = cart_item.pizza.name
+              td = cart_item.pizza.ingredients
+              td = number_to_currency(cart_item.pizza.price, :unit => '€')
+      = link_to "Checkout", {controller: :cart, action: :checkout}, {class: 'btn btn-danger pull-xs-right', method: :post}
+    - else
+      p.big-message
+        | You don't have any pizzas <br/> in your cart!
+

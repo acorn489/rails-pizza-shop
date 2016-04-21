@@ -14,11 +14,27 @@
   form {
     margin: 0;
   }
-  .cart-icon {
+  .cart-navbar-item {
+    position: relative;
+  }
+  .cart-item-counter {
+    position: absolute;
+    left: 17px;
+    font-size: 60%;
+    top: 6px;
+    color: rgb(255, 182, 18);
+    font-weight: bold;
   }
   .signup-button {
     margin-left: 4px;
   }
+}
+.big-message {
+  margin-top: 10%;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 43px;
+  color: #7c8080;
 }
 .flash-container {
   margin-top: 24px;

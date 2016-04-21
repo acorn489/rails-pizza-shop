@@ -51,3 +51,4 @@ end
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'rails_12factor', group: :production

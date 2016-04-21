@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-seed Pizza, {name: "Fried Tomatoes", ingredients: "Tomatoes, white cheese, gouda, olive oil", price: 7.89, image: "fried-tomatoes.jpg"}
+seed Pizza, {name: "Fried Tomatoes", price: 7.89, image: "fried-tomatoes.jpg"}, {ingredients: "Tomatoes, white cheese, gouda"}
 seed Pizza, {name: "Brazilian", ingredients: "Rucola, olives, habaneros, salad", price: 6.89, image: "brazilian-pizza.jpg"}
 seed Pizza, {name: "Basic Cheese", ingredients: "Cheese, tomatoes", price: 5.40, image: "basic-cheese.jpg"}
 seed Pizza, {name: "Diabolo", ingredients: "Habaneros, salami, gouda, tomatoes", price: 6.39, image: "diabolo.jpg"}
